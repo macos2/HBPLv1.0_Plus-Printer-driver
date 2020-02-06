@@ -8,7 +8,7 @@ SHARE=$PREFIX/share/foo2hbplv1-plus
 PATH=$PATH:~/.local/bin:$PREFIX/bin
 TMPCRD=""
 #ICC2PS=$PREFIX/bin/foo2zjs-icc2ps
-ICC2PS=/usr/bin/foo2zjs-icc2ps
+ICC2PS=/usr/bin/psicc
 
 COLOR=0
 DUPLEX=0
