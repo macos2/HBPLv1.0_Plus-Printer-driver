@@ -1,0 +1,10 @@
+#!/bin/bash
+echo -e "\e[34mSpecial The Install Path:[leave blank for /usr]\e[0m"
+read install_dir
+if [ "${install_dir}" = "" ];then \
+install_dir="/usr"; \
+fi
+temp=`echo "${install_dir}" | sed -e "s/\//\\\\\\\\\\//g" `
+sed "s/=@PREFIX@/=${temp}/g" makefile.in >makefile
+echo  -e "\e[34mInstall Path:${install_dir}\e[0m"
+
