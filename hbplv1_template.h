@@ -205,7 +205,7 @@ static char *head_template =\
 		"@PJL SET RET=ON\n"
 		"@PJL SET JOBATTR=\"@IREC=OFF\"\n"
 		"@PJL SET JOBATTR=\"@NLPP=%s\"\n"//打印质量 注：other_quality其他质量:N2 多合一选项 1in1：1  2in1：N2  4in1：N4  8in1：N8  16in1：N16  32in1：N32
-		"@PJL SET JOBATTR=%s\n"//双页："@HOAD=IC0A8016B" 单页："@HOAD=IC0A80169"
+		"@PJL SET JOBATTR=%s\n"//"@HOAD=IC0A80169"
 		"@PJL SET JOBATTR=\"@JOAU=%s\"\n"//user_name
 		"@PJL SET JOBATTR=\"@CNAM=%s\"\n"//host_name
 		"@PJL SET IWAMANUALDUP=%s\n"//手动双页：ON 单页：OFF
