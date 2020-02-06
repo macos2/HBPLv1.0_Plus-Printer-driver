@@ -28,8 +28,8 @@
 *LanguageVersion: English 
 *LanguageEncoding: ISOLatin1
 *PCFileName:	"FOO2HBPL.PPD"
-*Manufacturer:	"Fuji Xerox"
-*Product:	"(DocuPrint CP105)"
+*Manufacturer:	"Generic"
+*Product:	"(Generic HBPLv1.0 Printer)"
 *cupsVersion:	1.0
 *cupsManualCopies: True
 *cupsModelNumber:  2
