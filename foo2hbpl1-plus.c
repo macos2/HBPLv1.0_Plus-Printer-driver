@@ -149,17 +149,21 @@ int hbpl_print(const FILE *file) {
 	int i = 0,d=0,p=0;
 	unsigned char duplex_dir=2;
 	char *head1, *head2;
-	hbplv1_do_file(file);
-	if(duplex!=duplex_off&&num_page==1){
+	//JOB START
+	printf("%s", job_start);
+	fflush(stdout);
+	//JOB HEAD
+	hbplv1_do_file(file);//Parse input data to generate the job head
+	if(duplex!=duplex_off&&num_page==1){//turn off the duplex mode when printing only 1 page.
 		duplex=duplex_off;
 	}
 	char *head = get_hbpl_head(_date, _time, user_name, host_name, file_name,
 			num_page, color, duplex, media, paper_size_w, paper_size_h, paper,
 			copies, resolution, quality, draft, nlpp);
-	printf("%s", job_start);
 	printf("%s", head);
 	fwrite(head_tail_template, 12, 1,stdout);
 	fflush(stdout);
+	//PAGES DATA
 	if (duplex != duplex_off) {
 		i = num_page % 2;//skip first page when odd pages output under duplex model.
 		d=num_page+num_page%2;
@@ -191,6 +195,7 @@ int hbpl_print(const FILE *file) {
 			free(page_set[i]);
 		}
 	}
+	//JOB END
 	printf("B%s", job_end);
 	fflush(stdout);
 	free(head);
