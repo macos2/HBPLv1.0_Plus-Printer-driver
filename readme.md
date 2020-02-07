@@ -97,8 +97,8 @@ Uninstall 卸载
 
 Knowed Bugs 已知问题
 -----
-* The printer may not responed , after published the print jobs too frequently , restart the printer should be slove the problem.
-  打印过于频繁，打印机可能会对打印作业没有相应，重启打印机可解决问题。
+* The printer might not responed after published the print jobs too frequently ,  Replug the printer usb port should be slove the problem.
+  打印过于频繁，打印机可能会对打印作业没有相应，重插打印机usb接口应该可解决问题。
 
 * The print direction may be reversed in some graphic softwares like eog , if you care the direction, you can print the thing into a ghostscript file or a pdf file, and then print the ghostscript file or the pdf file with the printer.
-  在某些图像软件如eog，打印图像方向可能会反转，如果你对打印方向有要求，可先把打印内容输出至ghostscript或pdf文件，然后再用打印机打印该ghostscript或pdf文件。
+  在某些图像软件如eog，打印图像方向可能会反转，如果你对打印方向有要求，可先把打印内容输出至postscript或pdf文件，然后再用打印机打印该ghostscript或pdf文件。
