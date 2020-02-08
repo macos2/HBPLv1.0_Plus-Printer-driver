@@ -26,6 +26,10 @@ PAPER=2
 PAPERSIZE="-sPAPERSIZE=a4"
 GS_DIM=""
 
+if [ -x /usr/bin/logger -o -x /bin/logger ]; then
+    logger -t "$BASENAME" -p lpr.info -- "$BASENAME $@" </dev/null
+fi
+
 while getopts "c:d:g:l:m:n:p:q:r:t:G:" opt
 do
 	case $opt in
