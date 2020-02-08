@@ -50,7 +50,7 @@ Option:
 	-G	*.icm    convert *.icm to a Postscript CRD using icc2ps 
                   $SHARE/icm/ will be searched for *.icm if *.icm is not exist in current workplace.
 	example:
-	color printing,manual duplex longedge,plain media, custom 200mmx200 papersize, 10 copies ,1200dpi resoultion,draft model printing , convert "profile.icm"  to a Postscript CRD .
+	color printing,manual duplex longedge,plain media, custom 200mm x 200mm papersize, 10 copies ,1200dpi resoultion,draft model printing , convert "profile.icm"  to a Postscript CRD .
 	
 	"foo2hbpl1-plus-wrapper -c 1 -d 1 -m 1 -g 200x200 -p 12  -n 10 -r 1200 -q 2 -t 1 -G profile.icm < input.ps >output.hbpl"
 
