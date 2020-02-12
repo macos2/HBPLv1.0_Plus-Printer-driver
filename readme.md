@@ -61,7 +61,13 @@ It need the `psicc` to transform *.icm,so it also need the some packages like `l
 
 它需要`psicc`去转换*.icm文件，需安装类似`liblcms2-utils`的软件包让其工作正常。
 
+At Fedora `foo2zjs` also need to be installed since it have not been installed at new OS install.
+
+在Fedora环境下需安装`foo2zjs`，因为它默认是没有安装在系统上的。
+
 @Debian 10: `sudo apt install gcc make liblcms2-utils`
+
+@Fedora 31:`sudo dnf install gcc make foo2zjs` //liblcms package is depended by foo2zjs package. liblcms被foo2zjs安装包所依赖
 
 Configure 配置
 -----
@@ -102,3 +108,9 @@ Knowed Bugs 已知问题
 
 * The print direction may be reversed in some graphic softwares like eog , if you care the direction, you can print the thing into a ghostscript file or a pdf file, and then print the ghostscript file or the pdf file with the printer.
   在某些图像软件如eog，打印图像方向可能会反转，如果你对打印方向有要求，可先把打印内容输出至postscript或pdf文件，然后再用打印机打印该ghostscript或pdf文件。
+
+* The printer is not responed after first time printing @`Debian 10`（CUPS way）,but it work fine @`Fedora 31`,so I recommend using this driver @`Fedora 31`,but you can skip this problem by command line usage at `Debian 10`.
+
+  For example print something to the *.pdf or *.ps file ,and then `foo2hbpl1-plus-wrapper [options] < [\*.ps|\*.pdf] >output.hbpl `to transfrom the *.pdf or *.ps file to hbplv1 language page（`output.hbpl`）,at last `cat` the `output.hbpl` to the printer device(`/dev/usb/lp0`) like this `cat output.hbpl >/dev/usb/lp0`
+  在`Debian 10`环境下，首次打印后打印机会对后续的打印作业没有响应(CUPS 方式)，但在`Fedora 31`则没有这个问题，所以我建议你在`Fedora 31`上使用这打印驱动，但你也可以通过命令终端的方式在`Debian 10`上避开这个使用问题。
+  例如把打印的东西输出至*.pdf或*.ps格式文件，然后通过`foo2hbpl1-plus-wrapper [options] < [\*.ps|\*.pdf] >output.hbpl `把*.pdf或*.ps文件转换成hbplv1的页面文件（`output.hbpl`），最后`cat`这个`output.hbpl`文件到打印机设备(`/dev/usb/lp0`)，像这样`cat output.hbpl >/dev/usb/lp0`。
