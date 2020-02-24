@@ -55,13 +55,13 @@ Build Dependency 编译依赖
 -----
 Except the build tool like `gcc` with the strandard c library and `make`，It not need the any other development libraries to compile the programs .
 
-除了带有标准C语言库的gcc编译器及make架构工具以外，并不需要其它的依赖库。
+除了带有标准C语言库的gcc编译器及make架构工具以外，并不需要其它的依赖库编译程序。
 
-It need the `psicc` to transform *.icm,so it also need the some packages like `liblcms2-utils` to make it work fine.
+But it need the `psicc` to transform *.icm,so it also need the some packages like `liblcms2-utils` to make it work fine.
 
-它需要`psicc`去转换*.icm文件，需安装类似`liblcms2-utils`的软件包让其工作正常。
+但运行期间，它需要`psicc`去转换*.icm文件，需安装类似`liblcms2-utils`的软件包让其工作正常。
 
-At Fedora `foo2zjs` also need to be installed since it have not been installed at OS installtion default.
+At Fedora， `foo2zjs` also need to be installed since it have not been installed at OS installtion default.
 
 在Fedora环境下需安装`foo2zjs`，因为它默认是没有安装在系统上的。
 
@@ -123,7 +123,7 @@ Knowed Bugs 已知问题
   打印过于频繁，打印机可能会对打印作业没有相应，重插打印机usb接口应该可解决问题。
 
 * The print direction may be reversed in some graphic softwares like eog , if you care the direction, you can print the thing into a ghostscript file or a pdf file, and then print the ghostscript file or the pdf file with the printer.
-  在某些图像软件如eog，打印图像方向可能会反转，如果你对打印方向有要求，可先把打印内容输出至postscript或pdf文件，然后再用打印机打印该ghostscript或pdf文件。
+  在某些图像软件如eog，打印图像方向可能会反转，如果你对打印方向有要求，可先把打印内容输出至postscript或pdf文件，然后再用打印机打印该postscript或pdf文件。
 
 * The printer is not responed after first time printing @`Debian 10`（CUPS way）,but it work fine @`Fedora 31`,so I recommend using this driver @`Fedora 31`,but you can skip this problem by command line usage at `Debian 10`.
   在`Debian 10`环境下，首次打印后打印机会对后续的打印作业没有响应(CUPS 方式)，但在`Fedora 31`则没有这个问题，所以我建议你在`Fedora 31`上使用这打印驱动，但你也可以通过命令行的使用方式在`Debian 10`上避开这个使用问题。
