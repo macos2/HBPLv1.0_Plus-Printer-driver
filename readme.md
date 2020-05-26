@@ -53,7 +53,7 @@ For more detail about the original driver,go to [Dave Coffin's Home Page](http:/
 
 Build Dependency 编译依赖
 -----
-Except the build tool like `gcc` with the strandard c library and `make`，It not need the any other development libraries to compile the programs .
+Except the build tool like `gcc` with the strandard c library and `make`，It not need the other development libraries to compile the programs .
 
 除了带有标准C语言库的gcc编译器及make架构工具以外，并不需要其它的依赖库编译程序。
 
