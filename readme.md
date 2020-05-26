@@ -96,17 +96,21 @@ The installed *.ppd should be found by the admin tools,or your can special/uploa
 Command Line Usage 命令行方式使用
 -----
 1.print something to the *.pdf or *.ps format file(like `output.pdf` or `output.ps`).
+
   把打印的内容输出成*.pdf 或 *.ps 格式的文件。
 
 2.use command `foo2hbpl1-plus-wrapper [options] < [output.pdf|output.ps] >output.hbpl `to transfrom the *.pdf or *.ps file to hbplv1 language page file（`output.hbpl`）
+  
   通过命令`foo2hbpl1-plus-wrapper [options] < [output.pdf|output.ps] >output.hbpl `把*.pdf 或 *.ps 格式的文件转换成hbplv1页面描述性文件（`output.hbpl`）
 
 3.`cat` the hbplv1 language page file(`output.hbpl`) to printer device(like `/dev/usb/lp0`),`cat output.hbpl >/dev/usb/lp0`. 
+  
   把hbplv1页面描述性文件`cat`到打印机设备(如 `/dev/usb/lp0`)，`cat output.hbpl >/dev/usb/lp0`.
 
 CUPS Usage CUPS方式使用
 -----
 Select the installed printer in Print Dialog,set up the printing properties and then "print".
+
 在打印对话框中选择已安装的打印机，设置好打印的属性然后打印便可。
 
 Uninstall 卸载
@@ -116,14 +120,18 @@ Uninstall 卸载
 Knowed Bugs 已知问题
 -----
 * The printer might not responed after published the print jobs too frequently ,  Replug the printer usb port should be slove the problem.
+
   打印过于频繁，打印机可能会对打印作业没有相应，重插打印机usb接口应该可解决问题。
 
 * The print direction may be reversed in some graphic softwares like eog , if you care the direction, you can print the thing into a ghostscript file or a pdf file, and then print the ghostscript file or the pdf file with the printer.
+
   在某些图像软件如eog，打印图像方向可能会反转，如果你对打印方向有要求，可先把打印内容输出至postscript或pdf文件，然后再用打印机打印该postscript或pdf文件。
 
 * The printer is not responed after first time printing @`Debian 10`（CUPS way）,but it work fine @`Fedora 31`,so I recommend using this driver @`Fedora 31`,but you can skip this problem by command line usage at `Debian 10`.
+
   在`Debian 10`环境下，首次打印后打印机会对后续的打印作业没有响应(CUPS 方式)，但在`Fedora 31`则没有这个问题，所以我建议你在`Fedora 31`上使用这打印驱动，但你也可以通过命令行的使用方式在`Debian 10`上避开这个使用问题。
 
 * In `Fedora 31`,the public usb printer driver (which come with the linux kernel) might not worked after the new kernel upgrade , so be care of the new kernel upgrade.
+
   在`Fedora 31`下，内核的升级可能会导致通用usb打印驱动（内置于linux内核）出现问题而不可用，所以谨慎内核升级。
 
