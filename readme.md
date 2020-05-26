@@ -61,13 +61,9 @@ But it need the `psicc` to transform *.icm,so it also need the some packages lik
 
 但运行期间，它需要`psicc`去转换*.icm文件，需安装类似`liblcms2-utils`的软件包让其工作正常。
 
-At Fedora， `foo2zjs` also need to be installed since it have not been installed at OS installtion default.
-
-在Fedora环境下需安装`foo2zjs`，因为它默认是没有安装在系统上的。
-
 @Debian 10: `sudo apt install gcc make liblcms2-utils`
 
-@Fedora 31:`sudo dnf install gcc make foo2zjs` //liblcms package is depended by foo2zjs package. liblcms被foo2zjs安装包所依赖
+@Fedora 31: `sudo dnf install gcc make liblcms`
 
 Configure 配置
 -----
@@ -127,4 +123,7 @@ Knowed Bugs 已知问题
 
 * The printer is not responed after first time printing @`Debian 10`（CUPS way）,but it work fine @`Fedora 31`,so I recommend using this driver @`Fedora 31`,but you can skip this problem by command line usage at `Debian 10`.
   在`Debian 10`环境下，首次打印后打印机会对后续的打印作业没有响应(CUPS 方式)，但在`Fedora 31`则没有这个问题，所以我建议你在`Fedora 31`上使用这打印驱动，但你也可以通过命令行的使用方式在`Debian 10`上避开这个使用问题。
+
+* In `Fedora 31`,the public usb printer driver (which come with the linux kernel) might not worked after the new kernel upgrade , so be care of the new kernel upgrade.
+  在`Fedora 31`下，内核的升级可能会导致通用usb打印驱动（内置与linux内核）出现问题而不可用，所以谨慎内核升级。
 

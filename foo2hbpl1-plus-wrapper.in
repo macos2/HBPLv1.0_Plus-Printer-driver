@@ -139,7 +139,7 @@ GS="$GSBIN"
 #echo  "$GS -q -dBATCH -dSAFER -dQUIET -dNOPAUSE  $PAPERSIZE $GS_DIM -r$RES -sDEVICE=$GSDEV -sOutputFile="
 #echo "foo2hbpl1-plus -c$COLOR -d$DUPLEX $GS_DIM -m$MEDIA -n$COPIES -p$PAPER -q$QUALITY -r$RES -t$DRAFT"
 
-foo2zjs-pstops -n | \
+#foo2zjs-pstops -n | \
 cat \
 | ( $GS -q -dBATCH -dSAFER -dQUIET -dNOPAUSE  $PAPERSIZE $GS_DIM -r$RES -sDEVICE=$GSDEV -sOutputFile="|cat 1>&3" $TMPCRD -_ >/dev/null ) 3>&1 \
 |foo2hbpl1-plus -c$COLOR -d$DUPLEX $GS_DIM -l$N_in_1 -m$MEDIA -n$COPIES -p$PAPER -q$QUALITY -r$RES -t$DRAFT
