@@ -65,7 +65,7 @@ But it need the `psicc` to transform *.icm,so it also need the some packages lik
 
 @Fedora 31: `sudo dnf install gcc make liblcms`
 
-Configure 配置
+Configure 配置 (Optional 可选)
 -----
 `./configure` to configure the install path,leave blank for default install path `/usr`
 
@@ -73,7 +73,7 @@ Configure 配置
 
 you can skip this step if you want to use `/usr` for default install path since a configured `makefile` have been created for default install path.
 
-如果你想安装`/usr` ，你可以跳过该步骤，因为配置好默认路径的`makefile`已经创建了。
+如果你只想安装在`/usr` ，你可以跳过该步骤，因为配置好默认路径的`makefile`已经创建了。
 
 Build 编译
 -----
