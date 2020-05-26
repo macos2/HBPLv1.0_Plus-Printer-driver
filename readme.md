@@ -125,5 +125,5 @@ Knowed Bugs 已知问题
   在`Debian 10`环境下，首次打印后打印机会对后续的打印作业没有响应(CUPS 方式)，但在`Fedora 31`则没有这个问题，所以我建议你在`Fedora 31`上使用这打印驱动，但你也可以通过命令行的使用方式在`Debian 10`上避开这个使用问题。
 
 * In `Fedora 31`,the public usb printer driver (which come with the linux kernel) might not worked after the new kernel upgrade , so be care of the new kernel upgrade.
-  在`Fedora 31`下，内核的升级可能会导致通用usb打印驱动（内置与linux内核）出现问题而不可用，所以谨慎内核升级。
+  在`Fedora 31`下，内核的升级可能会导致通用usb打印驱动（内置于linux内核）出现问题而不可用，所以谨慎内核升级。
 
