@@ -23,6 +23,7 @@ char file_name[256];
 char _date[16];
 char _time[16];
 time_t t;
+int rand_job_num;
 bool color = false, draft = false,quit=false;
 unsigned char duplex = 0, media = 0, paper = 0, quality = 0, nlpp = nlpp_n1;
 unsigned int resolution = 600, copies = 1;
@@ -65,6 +66,8 @@ void init_global() {
 	memset(&_time, 0, 16);
 
 	t = time(NULL);
+	srand(t);
+	rand_job_num=rand();
 	strftime(_time, 16, "%H:%M:%S", localtime(&t));
 	strftime(_date, 16, "%m/%d/%Y", localtime(&t));
 
@@ -72,9 +75,6 @@ void init_global() {
 	char *user=getlogin();
 	if(user!=NULL)
 	strncpy(user_name, user, sizeof(user));
-
-	num_page = 0;
-	page_set = NULL;
 }
 
 void parse_arg(int argc, char *argv[]) {
@@ -148,12 +148,17 @@ void parse_arg(int argc, char *argv[]) {
 int hbpl_print(const FILE *file) {
 	int i = 0,d=0,p=0;
 	unsigned char duplex_dir=2;
-	char *head1, *head2;
+	char *head1, *head2,rand_job_num_str[9];
+	size_t num_page=0,num_page_limt=0;
+	page_data **page_set=NULL;
 	//JOB START
-	printf("%s", job_start);
+	sprintf(rand_job_num_str,"%0X",rand_job_num);
+	printf("%s",job_start_head);
+	printf("%s",rand_job_num_str);
+	printf("%s",job_start_tail);
 	fflush(stdout);
 	//JOB HEAD
-	hbplv1_do_file(file);//Parse input data to generate the job head
+	hbplv1_do_file(file,&num_page,&num_page_limt,&page_set);//Parse input data to generate the job head
 	if(duplex!=duplex_off&&num_page==1){//turn off the duplex mode when printing only 1 page.
 		duplex=duplex_off;
 	}
@@ -196,7 +201,9 @@ int hbpl_print(const FILE *file) {
 		}
 	}
 	//JOB END
-	printf("B%s", job_end);
+	printf("B%s",job_end_head);
+	printf("%s",rand_job_num_str);
+	printf("%s",job_end_tail);
 	fflush(stdout);
 	free(head);
 	return 0;

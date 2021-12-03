@@ -3,7 +3,7 @@ all:foo2hbpl1-plus foo2hbpl1-plus-wrapper
 
 foo2hbpl1-plus:foo2hbpl1-plus.c hbplv1_template.c hbplv1_encode.c
 	@echo "\e[32mBuild foo2hbpl1-plus\e[0m"
-	@gcc foo2hbpl1-plus.c hbplv1_template.c hbplv1_encode.c  -o foo2hbpl1-plus -lm -O2 -w
+	@gcc foo2hbpl1-plus.c hbplv1_template.c hbplv1_encode.c  -o foo2hbpl1-plus -lm -g -w 
 
 foo2hbpl1-plus-wrapper:foo2hbpl1-plus-wrapper.in
 	@echo "\e[32mModify foo2hbpl1-plus-wrapper\e[0m"

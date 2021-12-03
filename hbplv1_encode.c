@@ -174,11 +174,14 @@ int getint(FILE *fp) {
 	return ret;
 }
 
-int hbplv1_do_file(FILE *fp) {
+int hbplv1_do_file(FILE *fp,size_t *num_of_page,size_t *num_of_page_limt,page_data ***set_of_page) {
 	int type, iwide, ihigh, ideep, imax, ibyte;
 	int wide, deep, byte, row, col, i, k;
 	char tupl[128], line[128];
 	unsigned char *image, *sp, *dp;
+
+	size_t num_page=0,num_page_limt=0;
+	page_data **page_set=NULL;
 
 	while ((type = fgetc(fp)) != EOF) {
 		type = ((type - 'P') << 8) | fgetc(fp);
@@ -277,6 +280,11 @@ int hbplv1_do_file(FILE *fp) {
 		//hbplv1_encode_page(deep > 1, iwide, ihigh, (char *) image);
 		free(image);
 	}
+	//output result
+	if(num_of_page!=NULL)*num_of_page=num_page;
+	if(num_of_page_limt!=NULL)*num_of_page_limt=num_page_limt;
+	if(set_of_page!=NULL)*set_of_page=page_set;
+
 	return 0;
 	fail: fprintf(stderr, "Not an acceptable PBM, PPM or PAM file!!!\n");
 	return -1;

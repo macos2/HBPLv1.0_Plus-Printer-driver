@@ -170,16 +170,28 @@ static char *grayscale_gradation =\
 		"@PJL SET JOBATTR=\"@GDFT=0\"\n"
 		"@PJL SET JOBATTR=\"@IDFT=0\"\n";
 
-static char *job_start =\
+//static char *job_start =\
+// "\x1b%-12345X@PJL USTATUS DEVICE=ON\r\n"
+//		"@PJL USTATUS JOB=ON\r\n"
+//		"@PJL USTATUS PAGE=ON\r\n"
+//		"@PJL INFO STATUS\r\n"
+//		"@PJL JOB NAME=\"034445534B546E20006FD71A\"\r\n";
+//
+//static char *job_end =\
+// "@PJL EOJ NAME=\"034445534B546E20006FD71A\"\r\n\x1b"
+//		"%-12345X";
+
+static char *job_start_head=\
  "\x1b%-12345X@PJL USTATUS DEVICE=ON\r\n"
 		"@PJL USTATUS JOB=ON\r\n"
 		"@PJL USTATUS PAGE=ON\r\n"
 		"@PJL INFO STATUS\r\n"
-		"@PJL JOB NAME=\"034445534B546E20006FD71A\"\r\n";
+		"@PJL JOB NAME=\"034445534B546E20";//follow random hex number "XXXXXXXX"
+static char *job_start_tail="\"\r\n";
 
-static char *job_end =\
- "@PJL EOJ NAME=\"034445534B546E20006FD71A\"\r\n\x1b"
-		"%-12345X";
+static char *job_end_head="@PJL EOJ NAME=\"034445534B546E20";//follow random hex number "XXXXXXXX"
+static char *job_end_tail="\"\r\n\x1b%-12345X";
+
 
 static char *statusoff =\
  "\x1b%-12345X@PJL USTATUSOFF\r\n\x1b"

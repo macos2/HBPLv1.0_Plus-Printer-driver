@@ -21,10 +21,8 @@ typedef struct{
 	int width,height;
 }page_data;
 
-size_t num_page,num_page_limt;
-page_data **page_set;
 static char Clip[]={0x08,0x08,0x08,0x08};
 
-int  hbplv1_do_file(FILE *fp);
+int hbplv1_do_file(FILE *fp,size_t *num_of_page,size_t *num_of_page_limt,page_data ***set_of_page) ;
 page_data* hbplv1_encode_page(int color, int width, int height,char *image);
 #endif /* HBPLV1_ENCODE_H_ */
